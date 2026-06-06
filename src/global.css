@@ -4,6 +4,51 @@
    Autor: João Kleby
    ========================================================= */
 
+/*  =========================================================
+    0) Definindo Fonts
+    ========================================================= */
+
+@font-face {
+  font-family: "inter-black";
+  src: url("/fonts/inter/Inter-Black.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "inter-bolden";
+  src: url("/fonts/inter/Inter-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "inter-bold";
+  src: url("/fonts/inter/Inter-Bold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "inter-regular";
+  src: url("/fonts/inter/Inter-Regular.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "inter-medium";
+  src: url("/fonts/inter/Inter-Medium.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "inter-semiBold";
+  src: url("/fonts/inter/Inter-SemiBold.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "inter-light";
+  src: url("/fonts/inter/Inter-Light.ttf");
+  font-weight: 100;
+  font-style: normal;
+}
+
 /* =========================================================
    1) Variáveis globais da marca
    ========================================================= */
@@ -15,7 +60,7 @@
   --rn-gold-pale: #fff4d6;
   --rn-gold-deep: #b9770e;
 
-  --rn-dark: #2f2f2f;
+  --rn-se: #2f2f2f;
   --rn-dark-2: #3b3b3b;
   --rn-dark-3: #1f1f1f;
 
@@ -58,13 +103,14 @@
   --bs-border-color: #e5e7eb;
 
   /* ===== Fonte base ===== */
-  --rn-font-title: "Playfair Display", Georgia, serif;
-  --rn-font-body: "Montserrat", "Segoe UI", Arial, sans-serif;
+  --rn-font-title: "inter-bolden", serif;
+  --rn-font-body: "inter-medium", "inter-black", "Segoe UI", Arial;
 
   /* ===== Sombreamento ===== */
   --rn-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
   --rn-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
   --rn-shadow-gold: 0 8px 24px #d89216f9;
+  --rn-shadow-border: 0 8px 24px #d892163a;
 
   /* ===== Raios ===== */
   --rn-radius-sm: 10px;
@@ -84,6 +130,35 @@ body {
 
 body {
   line-height: 1.5;
+}
+
+.font-900 {
+  font-family: "inter-bolden";
+  font-weight: 900;
+}
+.font-600 {
+  font-family: "inter-bold";
+  font-weight: 600;
+}
+.font-500 {
+  font-family: "inter-semiBold";
+  font-weight: 500;
+}
+.font-400-black {
+  font-family: "inter-black";
+  font-weight: 400;
+}
+.font-300 {
+  font-family: "inter-regular";
+  font-weight: 300;
+}
+.font-400 {
+  font-family: "inter-medium";
+  font-weight: 400;
+}
+.font-100 {
+  font-family: "inter-light";
+  font-weight: 100;
 }
 
 h1,

@@ -2,7 +2,7 @@
   let currentYear = $state(new Date().getFullYear());
 </script>
 
-<footer class="app-footer">
+<footer class="app-footer font-100">
   <p>
     &copy; {currentYear} Cubagem. Desenvolvido com Tauri & Svelte 5.
   </p>
@@ -25,10 +25,11 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 1.6rem;
-    gap: 0.5rem;
+    padding-top: 1rem;
+    gap: 0.25rem;
     font-size: 0.875rem;
-    color: #666;
-    border-top: 1px solid #e2e8f0;
+    color: var(--rn-dark-2);
+    border-top: 1px solid var(--rn-shadow-soft);
     margin-top: auto; /* Empurra o footer para o final da tela */
     width: 100%;
   }
@@ -38,13 +39,18 @@
   }
 
   .app-footer a {
-    color: #ff3e00; /* Cor clássica do Svelte ou use a sua identidade */
+    color: var(--rn-gold); /* Cor clássica do Svelte ou use a sua identidade */
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: 0.2s ease-in;
   }
 
   .app-footer a:hover {
     text-decoration: underline;
+    color: var(--rn-gold-soft);
+    font-weight: 600;
   }
+  /*--rn-gold-soft: #f2c94c;
+  --rn-gold-pale: #fff4d6;
+  --rn-gold-deep: #b9770e;*/
 </style>

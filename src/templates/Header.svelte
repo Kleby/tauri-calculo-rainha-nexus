@@ -17,8 +17,8 @@
     background-color: var(--bs-light);
 
     /* Detalhe Synthwave: linha inferior com brilho neon sutil (Cyan/Pink) */
-    border-bottom: 2px solid #d8921639;
-    box-shadow: 0 1px 6px #d892163a;
+    border-bottom: 2px solid var(--rn-shadow-border);
+    box-shadow: 0 1px 6px var(--rn-shadow-border);
   }
 
   .header-brand {
