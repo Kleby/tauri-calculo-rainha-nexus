@@ -1,0 +1,171 @@
+/* =========================================================
+   Rainha Nexus Theme
+   Tema visual para projetos web com Bootstrap 5
+   Autor: João Kleby
+   ========================================================= */
+
+/* =========================================================
+   1) Variáveis globais da marca
+   ========================================================= */
+:root {
+  /* ===== Paleta oficial Rainha Nexus ===== */
+  --rn-gold: #d89216;
+  --rn-gold-light: #e4a91b;
+  --rn-gold-soft: #f2c94c;
+  --rn-gold-pale: #fff4d6;
+  --rn-gold-deep: #b9770e;
+
+  --rn-dark: #2f2f2f;
+  --rn-dark-2: #3b3b3b;
+  --rn-dark-3: #1f1f1f;
+
+  --rn-gray: #6b7280;
+  --rn-gray-light: #d1d5db;
+  --rn-gray-soft: #e5e7eb;
+
+  --rn-white: #ffffff;
+  --rn-bg: #f8f9fa;
+  --rn-surface: #ffffff;
+  --rn-surface-soft: #f3f4f6;
+
+  /* ===== Override das variáveis Bootstrap ===== */
+  --bs-primary: #d89216;
+  --bs-primary-rgb: 216, 146, 22;
+
+  --bs-secondary: #3b3b3b;
+  --bs-secondary-rgb: 59, 59, 59;
+
+  --bs-success: #2e8b57;
+  --bs-success-rgb: 46, 139, 87;
+
+  --bs-danger: #c0392b;
+  --bs-danger-rgb: 192, 57, 43;
+
+  --bs-warning: #f2c94c;
+  --bs-warning-rgb: 242, 201, 76;
+
+  --bs-info: #3b82f6;
+  --bs-info-rgb: 59, 130, 246;
+
+  --bs-light: #f8f9fa;
+  --bs-light-rgb: 248, 249, 250;
+
+  --bs-dark: #2f2f2f;
+  --bs-dark-rgb: 47, 47, 47;
+
+  --bs-body-bg: #f8f9fa;
+  --bs-body-color: #2f2f2f;
+  --bs-border-color: #e5e7eb;
+
+  /* ===== Fonte base ===== */
+  --rn-font-title: "Playfair Display", Georgia, serif;
+  --rn-font-body: "Montserrat", "Segoe UI", Arial, sans-serif;
+
+  /* ===== Sombreamento ===== */
+  --rn-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --rn-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --rn-shadow-gold: 0 8px 24px #d89216f9;
+
+  /* ===== Raios ===== */
+  --rn-radius-sm: 10px;
+  --rn-radius-md: 16px;
+  --rn-radius-lg: 22px;
+}
+
+/* =========================================================
+   2) Reset base da identidade
+   ========================================================= */
+html,
+body {
+  background-color: var(--rn-bg);
+  color: var(--rn-dark);
+  font-family: var(--rn-font-body);
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--rn-dark);
+  font-weight: 700;
+}
+
+a {
+  color: var(--rn-gold);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--rn-gold-light);
+}
+
+/* =========================================================
+   4) Botões
+   ========================================================= */
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+}
+
+.btn-primary {
+  background-color: var(--rn-gold) !important;
+  border-color: var(--rn-gold) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--rn-gold-light) !important;
+  border-color: var(--rn-gold-light) !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 0.2rem rgba(216, 146, 22, 0.18);
+}
+
+.btn-secondary {
+  background-color: var(--rn-dark-2);
+  border-color: var(--rn-dark-2);
+  color: #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: var(--rn-dark);
+  border-color: var(--rn-dark);
+  color: #fff;
+}
+
+.btn-outline-primary {
+  color: var(--rn-gold);
+  border-color: var(--rn-gold);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: var(--rn-gold);
+  border-color: var(--rn-gold);
+  color: #fff;
+}
+
+.btn-rainha-soft {
+  background-color: var(--rn-gold-pale);
+  border: 1px solid #f1dfaa;
+  color: var(--rn-gold-deep);
+}
+
+.btn-rainha-soft:hover {
+  background-color: #fdecc3;
+  color: var(--rn-gold-deep);
+}

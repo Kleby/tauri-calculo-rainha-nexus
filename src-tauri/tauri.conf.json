@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "material-calculo",
+  "version": "0.1.0",
+  "identifier": "com.kleby.material-calculo",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "material-calculo",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icon/icon.png",
+      "icons/icon.ico",
+      "icons/appe-icon.png",
+      "icons/android-icon-36x36.png",
+      "icons/favicon.ico"
+    ]
+  }
+}
