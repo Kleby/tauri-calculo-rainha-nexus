@@ -57,10 +57,10 @@
   --rn-gold: #d89216;
   --rn-gold-light: #e4a91b;
   --rn-gold-soft: #f2c94c;
-  --rn-gold-pale: #fff4d6;
+  --rn-gold-pale: #efe4d6;
   --rn-gold-deep: #b9770e;
 
-  --rn-se: #2f2f2f;
+  --rn-dark: #2f2f2f;
   --rn-dark-2: #3b3b3b;
   --rn-dark-3: #1f1f1f;
 
@@ -107,10 +107,11 @@
   --rn-font-body: "inter-medium", "inter-black", "Segoe UI", Arial;
 
   /* ===== Sombreamento ===== */
-  --rn-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --rn-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --rn-shadow-gold: 0 8px 24px #d89216f9;
-  --rn-shadow-border: 0 8px 24px #d892163a;
+  --rn-shadow-sm: 0 4px 12px rgba(170, 150, 21, 0.06);
+  --rn-shadow-md: 0 8px 24px rgba(190, 170, 15, 0.08);
+  --rn-shadow-gold: 0 8px 4px #d8921679;
+  --rn-shadow-border: 0 8px 24px #d892153a;
+  --rn-shadow-gold-color: #d8921679;
 
   /* ===== Raios ===== */
   --rn-radius-sm: 10px;
@@ -130,6 +131,11 @@ body {
 
 body {
   line-height: 1.5;
+}
+
+header,
+footer {
+  background-color: var(--rn-gold-pale);
 }
 
 .font-900 {

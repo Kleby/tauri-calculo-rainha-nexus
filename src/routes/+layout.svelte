@@ -17,12 +17,13 @@
   .app-layout {
     display: flex;
     flex-direction: column;
-    /*min-height: 100vh;*/
-    height: 100dvh;
-    font-family: sans-serif;
+    justify-content: space-between;
+    min-height: 100dvh;
+    height: 100%;
+    background-color: var(--bs-light);
   }
   .app {
     height: 100%;
-    background-color: var(--bs-primary);
+    background-color: var(--rn-gold);
   }
 </style>
