@@ -1,5 +1,6 @@
 <script lang="ts">
   import { NevruraService } from "../../services/nevrura.service";
+  import Nevrura from "../../components/Nevrura.svelte";
   let inputArea: string = $state("");
   let qtdNevruras = $state(0);
   let nevrurasRecomendadas: { tamanho: number; quantidade: number }[] = $state(
@@ -37,4 +38,5 @@
       Total: {qtdNevruras}
     </p>
   </div>
+  <Nevrura />
 </div>

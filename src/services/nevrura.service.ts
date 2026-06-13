@@ -4,7 +4,6 @@ export class NevruraService {
     ladoMenor: 0,
   };
   private nevrurasRecomendadas: { tamanho: number; quantidade: number }[] = [];
-  private tamanhos: { t: number } = { t: 0 };
   private qtdNevruras: number = 0;
 
   constructor(lado1: number, lado2: number) {
