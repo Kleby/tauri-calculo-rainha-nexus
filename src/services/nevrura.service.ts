@@ -3,10 +3,14 @@ export class NevruraService {
     ladoMaior: 0,
     ladoMenor: 0,
   };
-  private nevrurasRecomendadas: { tamanho: number; quantidade: number }[] = [];
+  private nevrurasRecomendadas: {
+    tamanho: number;
+    quantidade: number;
+    desenhos: number;
+  }[] = [];
   private qtdNevruras: number = 0;
 
-  constructor(lado1: number, lado2: number) {
+  constructor(lado1: number = 0, lado2: number = 0) {
     this.lados =
       lado1 > lado2
         ? { ladoMaior: lado1, ladoMenor: lado2 }
@@ -17,30 +21,45 @@ export class NevruraService {
       this.nevrurasRecomendadas.push({
         tamanho: parseFloat(i.toFixed(2)),
         quantidade: 0,
+        desenhos: 0,
       });
       this.qtdNevruras = this.lados.ladoMaior * 2.5;
     }
   }
 
-  calcularNevrurasRecomendadas(): { tamanho: number; quantidade: number }[] {
+  calcularNevrurasRecomendadas(): {
+    tamanho: number;
+    quantidade: number;
+    desenhos: number;
+  }[] {
     let qtdRestante = this.qtdNevruras;
-    let qtdTamanhos = this.nevrurasRecomendadas.length - 1;
+    let qtdDesenhos = 0;
     while (qtdRestante > 0) {
       let largura = this.lados.ladoMenor;
-      for (let i = 0; i < qtdTamanhos && largura > 0; i++) {
+      let i = 0;
+      while (
+        i < this.nevrurasRecomendadas.length - 1 &&
+        largura >= 1 &&
+        qtdRestante > 0
+      ) {
         if (largura >= this.nevrurasRecomendadas[i].tamanho) {
           largura = parseFloat(
             (largura - this.nevrurasRecomendadas[i].tamanho).toFixed(2),
           );
+          qtdDesenhos++;
           this.nevrurasRecomendadas[i].quantidade++;
           qtdRestante--;
         }
+        if (largura < this.nevrurasRecomendadas[i].tamanho) {
+          this.nevrurasRecomendadas[i].desenhos = qtdDesenhos;
+          qtdDesenhos = 0;
+          i++;
+        }
       }
     }
-    return this.nevrurasRecomendadas.filter((item) => item.quantidade > 0);
-  }
-
-  obterQuantidadeNevruras(): number {
-    return this.qtdNevruras;
+    this.nevrurasRecomendadas = this.nevrurasRecomendadas.filter(
+      (item) => item.quantidade > 0,
+    );
+    return this.nevrurasRecomendadas;
   }
 }
