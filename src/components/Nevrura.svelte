@@ -1,4 +1,23 @@
 <script lang="ts">
+  // import { onMount } from "svelte";
+  import { NevruraService } from "../services/nevrura.service";
+
+  let { ladoMenor, ladoMaior } = $props();
+
+  let nevrurasRecomendadas: {
+    tamanho: number;
+    quantidade: number;
+    desenhos: number;
+  }[] = $state([]);
+
+  $effect(() => {
+    // const nevruraService = getContext("nevruraServiceContext");
+    const nevruraService = new NevruraService(
+      parseFloat(ladoMenor),
+      parseFloat(ladoMaior),
+    );
+    nevrurasRecomendadas = nevruraService.calcularNevrurasRecomendadas();
+  });
 </script>
 
 <div class="nevrura-container">
@@ -14,38 +33,43 @@
           </div>
           <span class="table-header item-highlight">Quantidade</span>
         </div>
-        <i class="table-border"></i>
-        <div class="header-items">
-          <span class="table-item font-300">3m</span>
-          <div class="table-separete">
-            <i class="separete"></i>
+        {#each nevrurasRecomendadas as { tamanho, quantidade }}
+          <i class="table-border"></i>
+          <div class="header-items">
+            <span class="table-item font-300">{tamanho}m</span>
+            <div class="table-separete">
+              <i class="separete"></i>
+            </div>
+            <span class="table-item item-highlight font-300">{quantidade}</span>
           </div>
-          <span class="table-item item-highlight font-300">10</span>
-        </div>
+        {/each}
       </div>
       <i class="table-border"></i>
     </div>
   </div>
   <div class="nevrura-draw-container">
-    <span class="nevrura-label menor"> 5m</span>
-    <span class="nevrura-label maior"> 8m</span>
+    <span class="nevrura-label menor"> {ladoMenor}m</span>
+    <span class="nevrura-label maior"> {ladoMaior}m</span>
     <div class="nevrura-draw-content">
-      <i class="nevrura-draw"
-        ><span class="draw-separete top"></span><i class="central"></i><span
-          class="draw-separete bottom"
-        ></span></i
-      >
-      <i class="nevrura-draw"
-        ><span class="draw-separete top"></span><i class="central"></i><span
-          class="draw-separete bottom"
-        ></span>
-      </i>
-      <i class="nevrura-draw"
-        ><span class="draw-separete top"></span><i class="central"></i><span
-          class="draw-separete bottom"
-        ></span>
-      </i>
+      {#each nevrurasRecomendadas as { tamanho, desenhos }, index}
+        {#each Array(desenhos) as d}
+          <div
+            class="nevrura-draw"
+            style="height:  {(tamanho * 238) / ladoMenor}px"
+          >
+            <span
+              class="height"
+              style="left: {32 * (index % 2 === 0 ? 1 : -1)}px">{tamanho}m</span
+            >
+            <span class="draw-separete top"></span><i class="central"></i><span
+              class="draw-separete bottom"
+            ></span>
+          </div>
+        {/each}
+      {/each}
     </div>
+    <!-- <p>{tamanho}</p>
+      <p>{quantidade}</p> -->
   </div>
 </div>
 
@@ -129,7 +153,7 @@
     align-items: center;
     justify-content: center;
     width: 320px;
-    height: 270px;
+    height: 240px;
     position: relative;
   }
   .nevrura-draw-content {
@@ -160,8 +184,9 @@
   .nevrura-draw {
     content: "";
     display: flex;
-    position: relative;
+    align-items: center;
     justify-content: center;
+    position: relative;
     height: 100%;
     width: 24px;
     background: var(--rn-gray);
@@ -187,5 +212,10 @@
     height: 100%;
     width: 1px;
     background-color: #fff;
+  }
+  .height {
+    position: absolute;
+    font-size: 14px;
+    color: var(--rn-dark);
   }
 </style>

@@ -62,7 +62,7 @@
 
   --rn-dark: #2f2f2f;
   --rn-dark-2: #3b3b3b;
-  --rn-dark-3: #1f1f1f;
+  --rn-dark-3: #535353;
 
   --rn-gray: #6b7280;
   --rn-gray-light: #d1d5db;
@@ -111,7 +111,7 @@
   --rn-shadow-md: 0 8px 24px rgba(190, 170, 15, 0.08);
   --rn-shadow-gold: 0 8px 4px #d8921679;
   --rn-shadow-border: 0 8px 24px #d892153a;
-  --rn-shadow-gold-color: #d8921679;
+  --rn-shadow-color: #d89216ea;
 
   /* ===== Raios ===== */
   --rn-radius-sm: 10px;
@@ -203,6 +203,7 @@ a:hover {
   background-color: var(--rn-gold) !important;
   border-color: var(--rn-gold) !important;
   color: #fff !important;
+  cursor: pointer;
 }
 
 .btn-primary:hover,

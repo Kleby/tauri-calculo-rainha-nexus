@@ -24,6 +24,10 @@
   }
   .app {
     height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px;
     background-color: var(--rn-gold);
   }
 </style>

@@ -7,7 +7,7 @@
   <Border filterBlur="top" />
   <div class="app-footer font-300">
     <p>
-      &copy; {currentYear} Cubagem. Desenvolvido por
+      &copy; {currentYear} Rainha Nexus Desenvolvido por
       <a
         href="https://www.linkedin.com/in/jkleby/"
         target="_blank"
