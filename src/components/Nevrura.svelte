@@ -78,7 +78,6 @@
     width: 100%;
     height: 100%;
     padding: 8px;
-    border: 1px solid var(--rn-gold);
     background-color: var(--rn-dark-2);
   }
   .nevrura-subtitle {

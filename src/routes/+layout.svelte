@@ -21,13 +21,13 @@
     min-height: 100dvh;
     height: 100%;
     background-color: var(--bs-light);
+    position: relative;
   }
   .app {
     height: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 8px;
     background-color: var(--rn-gold);
   }
 </style>
